@@ -41,7 +41,10 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Build with mdBook
-        run: mdbook build
+        run: |
+          mdbook build
+          ls -la  # 添加此行来检查目录内容
+          pwd     # 显示当前工作目录
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
